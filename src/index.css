@@ -1,0 +1,13 @@
+html {
+   scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background-color: #F6F0E6;
+  
+}
+
+a {
+  color: #20201D;
+  text-decoration: none;
+}
