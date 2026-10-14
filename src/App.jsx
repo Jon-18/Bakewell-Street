@@ -1,11 +1,11 @@
-import { useState } from 'react'
+
 import "./styles/Home.css"
 import Navbar from './components/Navbars.jsx'
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import AboutUs from "./pages/Aboutus";
-import Menu from "./pages/Menu";
+import Menu from "./pages/MenuPage";
 import Branches from "./pages/Branches";
 import Franchise from "./pages/Franchise";
 
