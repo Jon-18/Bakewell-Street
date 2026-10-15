@@ -1,22 +1,40 @@
-.menu-page {
-  min-height: 100vh;
-  background: var(--cream);
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+  box-sizing: border-box;
 }
 
-/* Hero section */
+body {
+  margin: 0;
+  background: #E9DDCD;
+  color: #20201D;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.menu-page,
+.cafe-menu {
+  min-height: 100vh;
+  background: var(--cream, #E9DDCD);
+}
+
+
+/* =========================
+   MENU HERO
+========================= */
 
 .menu-hero {
   padding: 22px 4% 34px;
-  
 }
 
 .menu-eyebrow {
   margin: 0 0 12px;
   color: #92643F;
+  font-family: Inter, sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  font-family: Inter, sans-serif;
 }
 
 .menu-hero h1 {
@@ -33,36 +51,37 @@
   max-width: 340px;
   margin-top: 12px;
   color: #716B63;
+  font-family: Inter, sans-serif;
   font-size: 12px;
   line-height: 1.8;
-  font-family: Inter, sans-serif;
 }
 
+
+/* =========================
+   MENU NAVIGATION
+========================= */
 
 .menu-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 
   width: 100%;
-  min-height: 44px;
-  padding: 0 5.5%;
+  min-height: 38px;
+  padding: 12px 5.3%;
 
-  background-color: hwb(34 97% 0%);
+  background: #E9DDCD;
   border-top: 1px solid #E9DDCD;
   border-bottom: 1px solid #E9DDCD;
 
   font-family: Inter, sans-serif;
-  box-sizing: border-box;
-  
 }
 
 .menu-links {
   display: flex;
   align-items: center;
   gap: 24px;
-   
- 
 }
 
 .menu-links button {
@@ -70,10 +89,22 @@
   align-items: center;
   gap: 4px;
 
-  color: #92643F;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #20201D;
 
+  font-family: Inter, sans-serif;
+  font-size: 15px;
   font-weight: 500;
-  text-decoration: none;
+
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.menu-links button:hover,
+.menu-links button.active {
+  color: #92643F;
 }
 
 .menu-links a:hover {
@@ -81,16 +112,296 @@
 }
 
 .menu-disclaimer {
-  color: #898276;
-  font-size: 10px;
+  color: #81766B;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 9px;
   font-weight: 400;
   text-align: right;
 }
 
-/* Responsive layout */
-@media (max-width: 480px) {
+
+/* =========================
+   MENU SECTIONS
+========================= */
+
+.menu-section {
+  padding: 32px 5.3% 40px;
+  animation: fade-in 0.35s ease;
+}
+
+.pastry-section,
+.coffee-section {
+  background: #E9DDCD;
+}
+
+.menu-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+
+.eyebrow {
+  margin: 0 0 7px;
+  color: #9A633C;
+  font-family: Inter, sans-serif;
+  font-size: 9px;
+}
+
+.menu-heading h1 {
+  margin: 0;
+  color: #A3663E;
+  font-size: clamp(32px, 4vw, 70px);
+  font-weight: 400;
+}
+
+.heading-description {
+  max-width: 330px;
+  color: #80756A;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   MENU GRID & ITEMS
+========================= */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.menu-item {
+  min-width: 0;
+}
+
+.menu-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.15 / 1;
+  margin-bottom: 18px;
+
+  background: #E5DBCC;
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-image {
+  transform: translateY(-3px);
+}
+
+.item-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.item-title-row h2 {
+  margin: 0;
+  font-size: clamp(14px, 1.7vw, 19px);
+  font-weight: 400;
+}
+
+.item-price {
+  flex-shrink: 0;
+  font-family: Inter, sans-serif;
+  font-size: 10px;
+}
+
+.item-description,
+.item-allergens {
+  color: #81766B;
+  font-family: Inter, sans-serif;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.item-description {
+  margin: 8px 0 4px;
+}
+
+.item-allergens {
+  margin: 0;
+  font-size: 9px;
+}
+
+
+/* =========================
+   ORDER NOTE
+========================= */
+
+.order-note {
+  display: grid;
+  grid-template-columns: 32% 1fr;
+  align-items: start;
+  gap: 50px;
+
+  padding: 55px 5.7%;
+  background: #E9DDCD;
+  color: #716B63;
+}
+
+.order-note-title {
+  max-width: 330px;
+  margin: 0;
+
+  color: #92643F;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.order-note-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.order-note-content p {
+  margin: 0;
+  color: #716B63;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   BRANCHES SLOGAN
+========================= */
+
+.branches-slogan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  padding: 55px 5.7%;
+  background: #E9DDCD;
+  color: #92643F;
+}
+
+.slogan-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.slogan-content h3 {
+  margin: 0 0 14px;
+  color: #92643F;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(32px, 3.8vw, 52px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.slogan-content p {
+  margin: 0;
+  color: #716B63;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.slogan-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  flex-shrink: 0;
+  min-width: 246px;
+  padding: 19px 24px;
+
+  background: #20201D;
+  color: #E9DDCD;
+  text-decoration: none;
+
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.slogan-button span {
+  font-size: 17px;
+  transition: transform 0.3s ease;
+}
+
+.slogan-button:hover {
+  background: #92643F;
+}
+
+.slogan-button:hover span {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .order-note {
+    grid-template-columns: 30% 1fr;
+    gap: 30px;
+    padding: 45px 5%;
+  }
+
+  .branches-slogan {
+    gap: 25px;
+    padding: 45px 5%;
+  }
+
+  .slogan-content h3 {
+    font-size: clamp(30px, 4vw, 40px);
+  }
+
+  .slogan-button {
+    min-width: 210px;
+    gap: 18px;
+    padding: 17px 20px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
   .menu-nav {
-    padding: 0 16px;
+    flex-wrap: wrap;
+    padding: 14px 5%;
   }
 
   .menu-links {
@@ -98,6 +409,97 @@
   }
 
   .menu-disclaimer {
+    text-align: left;
+  }
+
+  .menu-section {
+    padding: 28px 5% 36px;
+  }
+
+  .menu-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .heading-description {
+    margin: 0;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 14px;
+  }
+
+  .menu-image {
+    margin-bottom: 12px;
+  }
+
+  .item-title-row {
+    flex-wrap: wrap;
+  }
+
+  .order-note {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 40px 6%;
+  }
+
+  .order-note-title {
+    max-width: 300px;
+    font-size: 34px;
+  }
+
+  .order-note-content {
+    gap: 14px;
+  }
+
+  .order-note-content p {
+    font-size: 14px;
+  }
+
+  .branches-slogan {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 28px;
+    padding: 42px 6%;
+  }
+
+  .slogan-content h3 {
+    font-size: 36px;
+  }
+
+  .slogan-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .slogan-button {
+    width: 100%;
+    min-width: 0;
+    padding: 18px 20px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .menu-nav {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .menu-disclaimer {
     font-size: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
   }
 }

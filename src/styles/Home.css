@@ -1,115 +1,119 @@
-
-/* Main layout */
+/* =========================
+   Main Layout
+========================= */
 
 .home-section {
-  min-height: 75vh;
   display: grid;
   grid-template-columns: 42% 58%;
   align-items: center;
+  min-height: 75vh;
   padding: 40px 3.5%;
-  font-family: Inter, sans-serif;
   box-sizing: border-box;
+  font-family: Inter, sans-serif;
 }
 
-/* Left content */
+/* =========================
+   Left Content
+========================= */
+
 .home-content-left {
-  padding-right: 50px;
   min-width: 0;
+  padding-right: 50px;
 }
 
 .home-content-left > p:first-child {
+  margin-bottom: 28px;
+  color: #92643F;
   font-size: 12px;
   font-weight: 700;
-  color: #92643F;
-  margin-bottom: 28px;
 }
 
 .home-content-left h1 {
+  margin: 0 0 32px;
+  color: #92643F;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(48px, 5.5vw, 80px);
-  line-height: 1.06;
   font-weight: 400;
+  line-height: 1.06;
   letter-spacing: -1.5px;
-  color: #92643F;
-  margin: 0 0 32px;
 }
 
 .home-description {
   max-width: 420px;
+  margin-bottom: 28px;
+  color: #716B63;
   font-size: 16px;
   line-height: 1.8;
-  color: #716B63;
-  margin-bottom: 28px;
 }
 
-/* Buttons */
+/* =========================
+   Buttons & Links
+========================= */
+
 .home-actions {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
   gap: 22px;
+}
+
+.primary-button,
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 53px;
+  font-size: 12px;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.15s ease;
 }
 
 .primary-button {
-  min-width: 150px;
-  min-height: 53px;
-  padding: 0 23px;
-  display: inline-flex;
-  align-items: center;
   justify-content: space-between;
   gap: 22px;
-  box-sizing: border-box;
-  background: #20201D;
+  min-width: 150px;
+  padding: 0 23px;
+  border: 1px solid transparent;
+  background-color: #20201D;
   color: #F6F0E6;
-  font-size: 12px;
-  text-decoration: none;
-  transition: background 0.25s ease;
 }
 
 .primary-button:hover {
-  background-color: #20201D;
-  border-style: solid;
-  border-width: 1px;
   border-color: #F6F0E6;
-  color: #F6F0E6;
-  /*20201D */
 }
 
-/* Click */
 .primary-button:active {
-  background-color: #20201D;
-  border-color: #F6F0E6;
+  border-color: #E9DDCD;
   transform: scale(0.98);
 }
 
-/* Keyboard accessibility */
-.primary-button:focus-visible {
+.primary-button:focus-visible,
+.text-link:focus-visible {
   outline: 2px solid #20201D;
   outline-offset: 4px;
 }
 
 .text-link {
   min-width: 100px;
-  min-height: 53px;
   padding: 0 23px;
-  display: inline-flex;
-  align-items: center;
-  box-sizing: border-box;
-  background: #F6F0E6;
+  border: 1px solid transparent;
+  background-color: #E9DDCD;
   color: #20201D;
-  font-size: 12px;
-  text-decoration: none;
-  transition: background 0.25s ease;
 }
 
-.text-link:hover{
-  background-color: #92643F;
-  border-style: solid;
-  border-width: 1px;
+.text-link:hover {
   border-color: #92643F;
+  background-color: #92643F;
   color: #F6F0E6;
-  
 }
+
+/* =========================
+   Supporting Text
+========================= */
 
 .home-note {
   margin-top: 29px;
@@ -118,10 +122,13 @@
   font-weight: 700;
 }
 
-/* Right content */
+/* =========================
+   Right Content & Image
+========================= */
+
 .home-content-right {
-  min-width: 0;
   width: 100%;
+  min-width: 0;
 }
 
 .home-image {
@@ -149,8 +156,11 @@
   white-space: nowrap;
 }
 
+/* =========================
+   Slogan Section
+========================= */
+
 .home-slogan {
-  font-family: "Cormorant Garamond", serif;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: center;
@@ -158,21 +168,26 @@
   padding: 24px 20%;
   background-color: #E9DDCD;
   color: #92643F;
+  font-family: "Cormorant Garamond", serif;
 }
 
+/* =========================
+   Tablet: 601px–1024px
+========================= */
 
-
-
-/* Tablet */
 @media (max-width: 1024px) {
   .home-section {
     grid-template-columns: 45% 55%;
-    padding: 40px 4%;
     min-height: auto;
+    padding: 40px 4%;
   }
 
   .home-content-left {
     padding-right: 25px;
+  }
+
+  .home-content-left > p:first-child {
+    margin-bottom: 20px;
   }
 
   .home-content-left h1 {
@@ -180,17 +195,9 @@
     letter-spacing: -1px;
   }
 
-  .home-content-left > p:first-child {
-    margin-bottom: 20px;
-  }
-
   .home-description {
     font-size: 14px;
     line-height: 1.7;
-  }
-
-  .home-image {
-    height: clamp(350px, 48vw, 500px);
   }
 
   .home-actions {
@@ -198,25 +205,31 @@
   }
 
   .primary-button {
+    gap: 12px;
     min-width: 175px;
     padding: 0 16px;
-    gap: 12px;
+  }
+
+  .home-image {
+    height: clamp(350px, 48vw, 500px);
   }
 
   .home-slogan {
-    padding: 22px 5%;
     gap: 12px;
+    padding: 22px 5%;
   }
 }
 
+/* =========================
+   Mobile: 361px–600px
+========================= */
 
-/* Mobile */
 @media (max-width: 600px) {
   .home-section {
     grid-template-columns: minmax(0, 1fr);
     gap: 30px;
-    padding: 45px 5% 30px;
     min-height: auto;
+    padding: 45px 5% 30px;
   }
 
   .home-content-left {
@@ -224,22 +237,22 @@
   }
 
   .home-content-left > p:first-child {
-    font-size: 11px;
     margin-bottom: 18px;
+    font-size: 11px;
   }
 
   .home-content-left h1 {
+    margin-bottom: 22px;
     font-size: clamp(42px, 11vw, 58px);
     line-height: 1.05;
     letter-spacing: -1px;
-    margin-bottom: 22px;
   }
 
   .home-description {
     max-width: 100%;
+    margin-bottom: 24px;
     font-size: 14px;
     line-height: 1.75;
-    margin-bottom: 24px;
   }
 
   .home-actions {
@@ -247,10 +260,10 @@
   }
 
   .primary-button {
+    gap: 16px;
     min-width: 0;
     min-height: 50px;
     padding: 0 18px;
-    gap: 16px;
   }
 
   .text-link {
@@ -280,15 +293,17 @@
     gap: 14px;
     padding: 22px 7%;
   }
-
 }
 
-/* Small mobile phones */
+/* =========================
+   Small Mobile: 360px & Below
+========================= */
+
 @media (max-width: 360px) {
   .home-section {
-    padding-left: 16px;
-    padding-right: 16px;
     gap: 24px;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
   .home-content-left h1 {
@@ -296,8 +311,8 @@
   }
 
   .home-actions {
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
     gap: 18px;
   }
 
@@ -314,8 +329,7 @@
   }
 
   .home-slogan {
-    padding: 22px 5%;
     gap: 12px;
+    padding: 22px 5%;
   }
-
 }
