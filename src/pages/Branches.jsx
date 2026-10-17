@@ -173,12 +173,13 @@ export default function Branches() {
             </button>
           </div>
         )}
+       
       </section>
-      <div className="cafe-page">
+       <div className="cafe-page">
         <section className="hero">
           <div className="hero-image">
             <img
-              src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1400&q=85"
+              src="/home-image.jpg"
               alt="A welcoming outdoor café with tables and greenery"
             />
           </div>
@@ -214,12 +215,13 @@ export default function Branches() {
             </p>
           </div>
 
-          <a className="menu-button" href="#menu">
+          <a className="menu-button" href="/menu">
             <span>Explore the menu</span>
             <span className="arrow" aria-hidden="true">↗</span>
           </a>
         </section>
-    </div>
+        </div>
+   
     </>
   )
 }

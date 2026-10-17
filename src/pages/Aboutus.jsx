@@ -1,6 +1,3 @@
-import React from 'react'
-import Navbar from '../components/Navbars'
-import Footer from '../components/Footer'
 import "../styles/About.css"
 
 export default function Aboutus() {
@@ -104,7 +101,7 @@ export default function Aboutus() {
             </p>
           </div>
 
-          <a href="#branches" className="slogan-button">
+          <a href="/branches" className="slogan-button">
             Find your Bakewell Street
             <span>↗</span>
           </a>

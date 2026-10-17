@@ -11,3 +11,26 @@ a {
   color: #20201D;
   text-decoration: none;
 }
+
+.home-image {
+  display: block;
+  width: 100%;
+  height: clamp(300px, 38vw, 600px);
+  object-fit: cover;
+  object-position: top;
+}
+
+.home-image {
+  animation: home-image-slide 0.7s ease 0.2s both;
+}
+@keyframes home-image-slide {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

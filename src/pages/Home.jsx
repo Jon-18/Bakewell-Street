@@ -1,4 +1,3 @@
-import React from 'react'
 
 export default function Home() {
   return (
@@ -17,11 +16,11 @@ export default function Home() {
               street.
             </p>
             <div className="home-actions">
-              <a href="#menu" className="primary-button">
+              <a href="/menu" className="primary-button">
                 Explore the menu <span>↗</span>
               </a>
 
-              <a href="#branches" className="text-link">
+              <a href="/branches" className="text-link">
                 Find a café
               </a>
             </div>

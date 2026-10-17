@@ -1,0 +1,149 @@
+
+/* Full-screen loading background */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  background-color: #F6F0E6;
+  color: #92643F;
+
+  animation: loading-fade-in 0.5s ease both;
+}
+
+/* Logo and brand */
+.loading-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Logo animation: small to big */
+.loading-logo {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+
+  transform-origin: center;
+  animation: logo-grow 1.6s ease-in-out infinite alternate;
+}
+
+/* Brand label */
+.loading-label {
+  margin: 0;
+
+  color: #92643F;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* Three animated dots */
+.loading-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 5px;
+}
+
+.loading-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #92643F;
+
+  animation: dot-pulse 1s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Short loading message */
+.loading-message {
+  margin: 0;
+  color: #716B63;
+
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  text-align: center;
+}
+
+/* Logo movement */
+@keyframes logo-grow {
+  from {
+    transform: scale(0.65);
+    opacity: 0.65;
+  }
+
+  to {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* Dots movement */
+@keyframes dot-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes loading-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .loading-screen,
+  .loading-logo,
+  .loading-dots span {
+    animation: none;
+  }
+
+  .loading-logo {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .loading-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .loading-message {
+    font-size: 17px;
+  }
+}

@@ -1,6 +1,22 @@
+
 /* =========================
-   GLOBAL STYLES
+   VARIABLES & GLOBAL STYLES
 ========================= */
+
+:root {
+  --cream: #E9DDCD;
+  --cream-dark: #E5DBCC;
+  --brown: #92643F;
+  --brown-light: #A3663E;
+  --text: #20201D;
+  --text-muted: #716B63;
+  --text-soft: #81766B;
+
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: Inter, sans-serif;
+
+  --page-padding: 5.3%;
+}
 
 * {
   box-sizing: border-box;
@@ -8,17 +24,17 @@
 
 body {
   margin: 0;
+}
+
+.menu-page{
+  min-height: 80vh;
   background: #E9DDCD;
-  color: #20201D;
-  font-family: "Cormorant Garamond", serif;
-}
 
-.menu-page,
+}
 .cafe-menu {
-  min-height: 100vh;
-  background: var(--cream, #E9DDCD);
+  min-height: 50vh;
+  background: #E9DDCD;
 }
-
 
 /* =========================
    MENU HERO
@@ -29,22 +45,22 @@ body {
 }
 
 .menu-eyebrow {
-  margin: 0 0 12px;
+  margin: 0;
   color: #92643F;
   font-family: Inter, sans-serif;
-  font-size: 14px;
-  text-transform: uppercase;
+  font-size: 10px;
   letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .menu-hero h1 {
   margin: 0;
   color: #92643F;
-  font-family: "Cormorant Garamond", serif;
   font-size: clamp(32px, 4.5vw, 75px);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -1.5px;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .menu-description {
@@ -56,7 +72,6 @@ body {
   line-height: 1.8;
 }
 
-
 /* =========================
    MENU NAVIGATION
 ========================= */
@@ -66,15 +81,11 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-
   width: 100%;
   min-height: 38px;
-  padding: 12px 5.3%;
-
-  background: #E9DDCD;
-  border-top: 1px solid #E9DDCD;
-  border-bottom: 1px solid #E9DDCD;
-
+  padding: 12px var(--page-padding);
+  background-color: #f8f2ea;
+  border-block: 0.001px solid #E9DDCD;
   font-family: Inter, sans-serif;
 }
 
@@ -88,16 +99,13 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-
   padding: 0;
-  border: none;
+  border: 0;
   background: transparent;
   color: #20201D;
-
   font-family: Inter, sans-serif;
   font-size: 15px;
   font-weight: 500;
-
   cursor: pointer;
   transition: color 0.2s ease;
 }
@@ -112,26 +120,25 @@ body {
 }
 
 .menu-disclaimer {
-  color: #81766B;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 9px;
+  color: #716B63;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
   font-weight: 400;
   text-align: right;
 }
-
 
 /* =========================
    MENU SECTIONS
 ========================= */
 
 .menu-section {
-  padding: 32px 5.3% 40px;
-  animation: fade-in 0.35s ease;
+  padding: 25px var(--page-padding) 40px;
+  animation: fade-in 0.6s ease;
 }
 
 .pastry-section,
 .coffee-section {
-  background: #E9DDCD;
+  background:#E9DDCD;
 }
 
 .menu-heading {
@@ -139,11 +146,10 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 34px;
+  padding-left: 100px;
 }
 
 .eyebrow {
-  margin: 0 0 7px;
   color: #9A633C;
   font-family: Inter, sans-serif;
   font-size: 9px;
@@ -151,19 +157,20 @@ body {
 
 .menu-heading h1 {
   margin: 0;
-  color: #A3663E;
+  color: #92643F;
   font-size: clamp(32px, 4vw, 70px);
   font-weight: 400;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .heading-description {
   max-width: 330px;
-  color: #80756A;
-  font-family: "Cormorant Garamond", serif;
+  color: #9A633C;
+  font-family: var(--font-heading);
   font-size: 11px;
   line-height: 1.7;
+  padding-right: 40px;
 }
-
 
 /* =========================
    MENU GRID & ITEMS
@@ -184,15 +191,13 @@ body {
   width: 100%;
   aspect-ratio: 1.15 / 1;
   margin-bottom: 18px;
-
-  background: #E5DBCC;
+  background: var(--cream-dark);
   object-fit: cover;
-
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease;
 }
 
 .menu-item:hover .menu-image {
-  transform: translateY(-3px);
+  transform: translateY(-10px);
 }
 
 .item-title-row {
@@ -202,23 +207,25 @@ body {
   gap: 8px;
 }
 
-.item-title-row h2 {
+.item-title-row h3 {
+  color:#92643F;
+  font-size: 20px;
   margin: 0;
-  font-size: clamp(14px, 1.7vw, 19px);
+  font-size: 20px;
   font-weight: 400;
 }
 
 .item-price {
   flex-shrink: 0;
-  font-family: Inter, sans-serif;
-  font-size: 10px;
+  font-family: "Cormorant Garamond", serif;
+  font-size:15px;
 }
 
 .item-description,
 .item-allergens {
-  color: #81766B;
+  color: #716B63;
   font-family: Inter, sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.7;
 }
 
@@ -231,27 +238,24 @@ body {
   font-size: 9px;
 }
 
-
 /* =========================
    ORDER NOTE
 ========================= */
 
 .order-note {
   display: grid;
-  grid-template-columns: 32% 1fr;
+  grid-template-columns: minmax(0, 32%) minmax(0, 1fr);
   align-items: start;
   gap: 50px;
-
   padding: 55px 5.7%;
-  background: #E9DDCD;
-  color: #716B63;
+  background: #f8f2ea;
+  color: #92643F;
 }
 
 .order-note-title {
   max-width: 330px;
   margin: 0;
-
-  color: #92643F;
+  color:#92643F;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(30px, 3vw, 40px);
   font-weight: 400;
@@ -266,13 +270,12 @@ body {
 
 .order-note-content p {
   margin: 0;
-  color: #716B63;
-  font-family: Inter, sans-serif;
+  color: #20201D;
+  font-family: "Cormorant Garamond", serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.8;
 }
-
 
 /* =========================
    BRANCHES SLOGAN
@@ -283,10 +286,9 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-
   padding: 55px 5.7%;
   background: #E9DDCD;
-  color: #92643F;
+  color:#92643F;
 }
 
 .slogan-content {
@@ -295,7 +297,6 @@ body {
 }
 
 .slogan-content h3 {
-  margin: 0 0 14px;
   color: #92643F;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(32px, 3.8vw, 52px);
@@ -306,7 +307,7 @@ body {
 
 .slogan-content p {
   margin: 0;
-  color: #716B63;
+  color: #20201D;
   font-family: Inter, sans-serif;
   font-size: 16px;
   line-height: 1.7;
@@ -317,22 +318,16 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-
   flex-shrink: 0;
   min-width: 246px;
   padding: 19px 24px;
-
-  background: #20201D;
+  background-color: #20201D;
   color: #E9DDCD;
-  text-decoration: none;
-
   font-family: Inter, sans-serif;
   font-size: 13px;
   font-weight: 500;
-
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 .slogan-button span {
@@ -341,13 +336,12 @@ body {
 }
 
 .slogan-button:hover {
-  background: #92643F;
+  background: var(--brown);
 }
 
 .slogan-button:hover span {
   transform: translate(3px, -3px);
 }
-
 
 /* =========================
    ANIMATIONS
@@ -365,14 +359,13 @@ body {
   }
 }
 
-
 /* =========================
    TABLET
 ========================= */
 
 @media (max-width: 900px) {
   .order-note {
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: minmax(0, 30%) minmax(0, 1fr);
     gap: 30px;
     padding: 45px 5%;
   }
@@ -393,7 +386,6 @@ body {
   }
 }
 
-
 /* =========================
    MOBILE
 ========================= */
@@ -405,6 +397,7 @@ body {
   }
 
   .menu-links {
+    flex-wrap: wrap;
     gap: 16px;
   }
 
@@ -421,10 +414,12 @@ body {
     flex-direction: column;
     gap: 8px;
     margin-bottom: 24px;
+    padding-left: 20px;
   }
 
   .heading-description {
     margin: 0;
+    padding-right: 40px;
   }
 
   .menu-grid {
@@ -482,15 +477,13 @@ body {
   }
 }
 
-
 /* =========================
    SMALL MOBILE
 ========================= */
 
 @media (max-width: 480px) {
   .menu-nav {
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-inline: 16px;
   }
 
   .menu-disclaimer {
@@ -501,5 +494,22 @@ body {
 @media (max-width: 360px) {
   .menu-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-section {
+    animation: none;
+  }
+
+  .menu-image,
+  .menu-links button,
+  .slogan-button,
+  .slogan-button span {
+    transition: none;
   }
 }

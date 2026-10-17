@@ -1,0 +1,487 @@
+
+/* =================================
+   FRANCHISE PAGE
+================================= */
+
+.franchise-page {
+  --cream: #F6F0E6;
+  --sand: #E9DDCD;
+  --brown: #92643F;
+  --dark: #20201D;
+  --muted: #716B63;
+
+  width: 100%;
+  overflow-wrap: break-word;
+  background-color: var(--cream);
+  color: var(--muted);
+  font-family: Inter, sans-serif;
+  box-sizing: border-box;
+}
+
+.franchise-page *,
+.franchise-page *::before,
+.franchise-page *::after {
+  box-sizing: border-box;
+}
+
+.franchise-page img {
+  max-width: 100%;
+}
+
+/* =================================
+   INTRODUCTION
+================================= */
+
+.franchise-intro {
+  padding: 65px 6% 40px;
+}
+
+.franchise-eyebrow {
+  color: var(--brown);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 1.7;
+  margin: 0 0 15px;
+}
+
+.franchise-title,
+.inquiry-intro h2,
+.franchise-closing h2 {
+  color: var(--brown);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.franchise-title {
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1.05;
+  margin: 0 0 12px;
+}
+
+.franchise-description {
+  max-width: 580px;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
+
+.franchise-hero-image {
+  display: block;
+  width: 100%;
+  height: clamp(240px, 30vw, 430px);
+  object-fit: cover;
+  object-position: center;
+  animation: slide-franchise-hero-image 0.6s ease both;
+}
+
+@keyframes slide-franchise-hero-image {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =================================
+   BRAND HIGHLIGHTS
+================================= */
+
+.franchise-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 35px;
+  padding: 35px 6% 45px;
+}
+
+.franchise-highlights article {
+  min-width: 0;
+}
+
+.franchise-highlights h3 {
+  color: var(--dark);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.franchise-highlights p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* =================================
+   INQUIRY SECTION
+================================= */
+
+.franchise-inquiry {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  align-items: start;
+  gap: 55px;
+  padding: 60px 6%;
+  background-color: var(--sand);
+}
+
+.inquiry-intro {
+  min-width: 0;
+}
+
+.inquiry-intro h2 {
+  font-size: clamp(36px, 3.5vw, 48px);
+  line-height: 1.08;
+  margin: 0 0 15px;
+}
+
+.inquiry-intro > p:not(.franchise-eyebrow) {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0 0 24px;
+}
+
+.inquiry-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.2 / 1;
+  object-fit: cover;
+  margin-top: 25px;
+   animation: slide-in-inquiry-image 0.6s ease both;
+}
+
+@keyframes slide-in-inquiry-image {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =================================
+   FORM
+================================= */
+
+.franchise-form {
+  min-width: 0;
+  padding: 35px;
+  background-color: #FFFCF7;
+}
+
+.franchise-form > h3 {
+  color: var(--brown);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 10px;
+}
+
+.form-intro {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 8px;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  color: var(--dark);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-bottom: 1px solid #D8CABB;
+  border-radius: 0;
+  outline: none;
+  background-color: transparent;
+  color: var(--dark);
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+}
+
+.form-field input,
+.form-field select {
+  min-height: 38px;
+  padding: 8px 0;
+}
+
+.form-field textarea {
+  min-height: 100px;
+  padding: 12px 0;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #9A9187;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-bottom-color: var(--brown);
+}
+
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 22px 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.form-consent input {
+  flex-shrink: 0;
+  margin-top: 3px;
+  accent-color: var(--brown);
+}
+
+.franchise-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 0;
+  background-color: var(--dark);
+  color: var(--cream);
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.franchise-submit:hover {
+  background-color: var(--brown);
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  margin: 15px 0 0;
+}
+
+/* =================================
+   CLOSING SECTION
+================================= */
+
+.franchise-closing {
+  padding: 50px 6% 60px;
+  background-color: var(--cream);
+}
+
+.franchise-closing h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+.franchise-closing > p:not(.franchise-eyebrow) {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+
+.franchise-closing a {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--brown);
+  font-size: 12px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--brown);
+  padding-bottom: 5px;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+  .franchise-intro {
+    padding: 50px 5% 30px;
+  }
+
+  .franchise-highlights {
+    gap: 24px;
+    padding: 30px 5% 40px;
+  }
+
+  .franchise-inquiry {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 28px;
+    padding: 45px 5%;
+  }
+
+  .franchise-form {
+    padding: 25px;
+  }
+
+  .form-grid {
+    gap: 18px 14px;
+  }
+
+  .franchise-closing {
+    padding: 45px 5%;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+  .franchise-intro {
+    padding: 38px 22px 25px;
+  }
+
+  .franchise-title {
+    font-size: clamp(38px, 10vw, 52px);
+    line-height: 1.08;
+  }
+
+  .franchise-description {
+    font-size: 13px;
+    margin-bottom: 22px;
+  }
+
+  .franchise-hero-image {
+    height: 260px;
+  }
+
+  .franchise-highlights {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 30px 22px 40px;
+  }
+
+  .franchise-highlights h3 {
+    font-size: 24px;
+  }
+
+  .franchise-highlights p {
+    font-size: 12px;
+  }
+
+  .franchise-inquiry {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+    padding: 38px 22px;
+  }
+
+  .inquiry-intro h2 {
+    font-size: 40px;
+  }
+
+  .inquiry-image {
+    aspect-ratio: 1.35 / 1;
+    max-height: 300px;
+  }
+
+  .franchise-form {
+    width: 100%;
+    padding: 25px 20px;
+  }
+
+  .franchise-form > h3 {
+    font-size: 32px;
+  }
+
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .form-field-full {
+    grid-column: auto;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-size: 13px;
+  }
+
+  .franchise-submit {
+    width: 100%;
+  }
+
+  .franchise-closing {
+    padding: 38px 22px 45px;
+  }
+
+  .franchise-closing h2 {
+    font-size: 36px;
+  }
+}
+
+/* =================================
+   SMALL PHONES
+================================= */
+
+@media (max-width: 360px) {
+  .franchise-intro,
+  .franchise-closing {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .franchise-highlights,
+  .franchise-inquiry {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .franchise-title {
+    font-size: 36px;
+  }
+
+  .franchise-form {
+    padding: 22px 16px;
+  }
+
+  .inquiry-intro h2 {
+    font-size: 34px;
+  }
+}

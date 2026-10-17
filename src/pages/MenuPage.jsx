@@ -1,5 +1,5 @@
 import "../styles/MenuPages.css"
-import Menu from "../pages/Menu.jsx"
+import "../styles/Menu.css"
 import { useState } from 'react'
 
 const menuItems = {
@@ -97,33 +97,29 @@ export default function MenuPages() {
           </p>
         </header>
         <div className="cafe-menu">
-        <nav className="menu-nav">
-        <div className="menu-links">
-            <button
-              className={isPastries ? "active" : ""}
-              onClick={() => setActiveMenu("pastries")}
-            >
-              Pastries ↓
-            </button>
+          <nav className="menu-nav">
+            <div className="menu-links">
+                <button
+                  className={isPastries ? "active" : ""}
+                  onClick={() => setActiveMenu("pastries")}
+                >
+                  Pastries ↓
+                </button>
 
-            <button
-              className={!isPastries ? "active" : ""}
-              onClick={() => setActiveMenu("coffee")}
-            >
-              Coffee ↓
-            </button>
-        </div>
+                <button
+                  className={!isPastries ? "active" : ""}
+                  onClick={() => setActiveMenu("coffee")}
+                >
+                  Coffee ↓
+                </button>
+            </div>
 
-        <span className="menu-disclaimer">
-            Sample menu · All prices and availability are illustrative.
-        </span>
-      </nav>
-
-      <section
-        className={`menu-section ${isPastries ? "pastry-section" : "coffee-section"}`}
-        key={activeMenu}
-      >
-        <div className="menu-heading">
+          <span className="menu-disclaimer">
+              Sample menu · All prices and availability are illustrative.
+          </span>
+          
+          </nav>
+       <div className="menu-heading">
           <div>
             <p className="eyebrow">
               {isPastries ? "FROM THE OVEN" : "FROM THE COFFEE BAR"}
@@ -139,6 +135,12 @@ export default function MenuPages() {
           </p>
         </div>
 
+      <section
+        className={`menu-section ${isPastries ? "pastry-section" : "coffee-section"}`}
+        key={activeMenu}
+      >
+       
+
         <div className="menu-grid">
           {menuItems[activeMenu].map((item) => (
             <article className="menu-item" key={item.name}>
@@ -149,7 +151,7 @@ export default function MenuPages() {
               />
 
               <div className="item-title-row">
-                <h2>{item.name}</h2>
+                <h3>{item.name}</h3>
                 <span className="item-price">{item.price}</span>
               </div>
 
@@ -189,7 +191,7 @@ export default function MenuPages() {
           </p>
         </div>
 
-        <a href="#branches" className="slogan-button">
+        <a href="/branches" className="slogan-button">
           Find your Bakewell Street
           <span>↗</span>
         </a>
