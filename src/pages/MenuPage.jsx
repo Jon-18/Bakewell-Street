@@ -7,78 +7,104 @@ const menuItems = {
     {
       name: "Butter croissant",
       price: "£3.50",
-      description:
-        "Golden layers, a delicate crunch and a soft buttery centre.",
+      description: "Golden layers and a soft buttery centre.",
       allergens: "Contains wheat, milk, egg",
       image: "/home-image.jpg",
     },
-    {
-      name: "Pain au chocolat",
-      price: "£4.00",
-      description:
-        "Flaky pastry wrapped around a rich dark chocolate centre.",
-      allergens: "Contains wheat, milk, egg, soy",
-      image: "/home-image.jpg",
-    },
-    {
-      name: "Cinnamon swirl",
-      price: "£3.80",
-      description:
-        "A soft spiral of cinnamon, finished with a light glaze.",
-      allergens: "Contains wheat, milk, egg",
-      image: "/home-image.jpg",
-    },
-    {
-      name: "Almond croissant",
-      price: "£4.50",
-      description:
-        "Buttery pastry, almond cream and toasted almond flakes.",
-      allergens: "Contains wheat, milk, egg, nuts",
-      image: "/home-image.jpg",
-    },
+    // Keep your other pastry items here
   ],
 
   coffee: [
     {
       name: "Espresso",
       price: "£2.80",
-      description:
-        "A small, full-bodied cup with a beautifully balanced finish.",
-      allergens: "Double shot · served hot",
+      description: "A small, full-bodied cup.",
+      allergens: "Coffee",
       image: "/home-image.jpg",
     },
+    // Keep your other coffee items here
+  ],
+
+  cakes: [
     {
-      name: "Flat white",
-      price: "£3.60",
-      description:
-        "Rich espresso meets silky milk. Your everyday favourite.",
-      allergens: "Contains milk · oat option available",
+      name: "Chocolate cake",
+      price: "£4.50",
+      description: "Rich chocolate cake with a smooth finish.",
+      allergens: "Contains wheat, milk, egg",
       image: "/home-image.jpg",
     },
+  ],
+
+  sandwiches: [
     {
-      name: "Cappuccino",
-      price: "£3.60",
-      description:
-        "Espresso, steamed milk and a generous cloud of foam.",
-      allergens: "Contains milk · oat option available",
+      name: "Chicken sandwich",
+      price: "£6.50",
+      description: "A freshly prepared sandwich for lunch.",
+      allergens: "Check ingredients before ordering",
       image: "/home-image.jpg",
     },
+  ],
+
+  drinks: [
     {
       name: "Iced latte",
       price: "£4.20",
-      description:
-        "Espresso and cool milk over ice, for a slower afternoon.",
-      allergens: "Contains milk · oat option available",
+      description: "Espresso and cool milk over ice.",
+      allergens: "Contains milk; alternatives may be available",
       image: "/home-image.jpg",
     },
-
   ],
 };
 
+const categoryInfo = {
+  pastries: {
+    eyebrow: "FROM THE OVEN",
+    title: "Pastries",
+    description:
+      "Golden layers, soft centres and something to make your day.",
+  },
+  coffee: {
+    eyebrow: "FROM THE COFFEE BAR",
+    title: "Coffee",
+    description:
+      "Your usual, or a new favourite. Carefully made, one cup at a time.",
+  },
+  cakes: {
+    eyebrow: "SOMETHING SWEET",
+    title: "Cakes",
+    description:
+      "A little slice of happiness for your everyday moments.",
+  },
+  sandwiches: {
+    eyebrow: "MADE FOR LUNCH",
+    title: "Sandwiches",
+    description:
+      "Freshly prepared bites for a slower lunch or a busy day.",
+  },
+  drinks: {
+    eyebrow: "SOMETHING REFRESHING",
+    title: "Cold Drinks",
+    description:
+      "Cool, refreshing favourites for every kind of afternoon.",
+  },
+};
 
 export default function MenuPages() {
   const [activeMenu, setActiveMenu] = useState("pastries");
-    const isPastries = activeMenu === "pastries";
+  
+  const categories = [
+    { id: "pastries", label: "Pastries" },
+    { id: "coffee", label: "Coffee" },
+    { id: "cakes", label: "Cakes" },
+    { id: "sandwiches", label: "Sandwiches" },
+    { id: "drinks", label: "Cold Drinks" },
+  ];
+
+  const activeCategory = categories.find(
+    (category) => category.id === activeMenu
+  );
+
+  const activeItems = menuItems[activeMenu];
   return (
     <>
     <div>
@@ -96,53 +122,48 @@ export default function MenuPages() {
             at our counter.
           </p>
         </header>
-        <div className="cafe-menu">
+        <div className="cafe-menu"> 
           <nav className="menu-nav">
             <div className="menu-links">
+              {categories.map((category) => (
                 <button
-                  className={isPastries ? "active" : ""}
-                  onClick={() => setActiveMenu("pastries")}
+                  key={category.id}
+                  type="button"
+                  className={
+                    activeMenu === category.id ? "active" : ""
+                  }
+                  onClick={() => setActiveMenu(category.id)}
+                  aria-pressed={activeMenu === category.id}
                 >
-                  Pastries ↓
+                  {category.label}
+                  <span aria-hidden="true"> ↓</span>
                 </button>
-
-                <button
-                  className={!isPastries ? "active" : ""}
-                  onClick={() => setActiveMenu("coffee")}
-                >
-                  Coffee ↓
-                </button>
+              ))}
             </div>
 
-          <span className="menu-disclaimer">
-              Sample menu · All prices and availability are illustrative.
-          </span>
-          
+            <span className="menu-disclaimer">
+              Sample menu · Prices and availability may vary.
+            </span>
           </nav>
-       <div className="menu-heading">
-          <div>
-            <p className="eyebrow">
-              {isPastries ? "FROM THE OVEN" : "FROM THE COFFEE BAR"}
-            </p>
+       
+          <div className="menu-heading">
+            <div>
+              <p className="eyebrow">
+                {categoryInfo[activeMenu].eyebrow}
+              </p>
 
-            <h1>{isPastries ? "Pastries" : "Coffee"}</h1>
+              <h1>{categoryInfo[activeMenu].title}</h1>
+            </div>
+
+            <p className="heading-description">
+              {categoryInfo[activeMenu].description}
+            </p>
           </div>
 
-          <p className="heading-description">
-            {isPastries
-              ? "Golden layers, soft centres and something to make your day."
-              : "Your usual, or a new favourite. Carefully made, one cup at a time."}
-          </p>
-        </div>
 
-      <section
-        className={`menu-section ${isPastries ? "pastry-section" : "coffee-section"}`}
-        key={activeMenu}
-      >
-       
-
+      <section className="menu-section" key={activeMenu}>
         <div className="menu-grid">
-          {menuItems[activeMenu].map((item) => (
+          {activeItems.map((item) => (
             <article className="menu-item" key={item.name}>
               <img
                 src={item.image}

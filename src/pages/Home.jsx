@@ -1,4 +1,6 @@
 
+import "../styles/Home.css"
+
 export default function Home() {
   return (
     <>
@@ -43,11 +45,7 @@ export default function Home() {
           </div>
           
         </main>
-        <div className="home-slogan">
-            <h2>▪ Pastries worth pausing for</h2>
-            <h2>▪ Coffee, made with care</h2>
-            <h2>▪ Your coffee table</h2>
-        </div>
+        
     </>
   )
 }

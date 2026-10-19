@@ -181,7 +181,10 @@
   align-items: center;
   gap: 100px;
   padding: 24px 20%;
-  background-color: #E9DDCD;
+  border-top: 0.1px;
+  border-left: 0px;
+  border-right: 0px;
+  border-style: solid;
   color: #92643F;
   font-family: "Cormorant Garamond", serif;
 }

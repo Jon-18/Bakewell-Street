@@ -2,7 +2,7 @@
 .header {
   position: relative;
   z-index: 100;
-  border-bottom: 1px solid #20201D;
+  border-bottom: 0.5px solid #92643F;
   background-color: #F6F0E6;
 }
 
