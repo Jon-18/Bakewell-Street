@@ -11,6 +11,7 @@ body {
   padding: 55px 5.4% 65px;
   width: 100%;
   box-sizing: border-box;
+  border-bottom: 0.5px #716B63 solid;
 }
 
 .branches-section *,
@@ -562,7 +563,7 @@ body {
 img {
   display: block;
   max-width: 100%;
-  
+  max-height: 100%;
 }
 
 a {
@@ -589,6 +590,7 @@ a {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
   letter-spacing: -0.025em;
+
 }
 
 .eyebrow {
@@ -609,10 +611,12 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #E9DDCD;
+  height:48em;
 }
 
 .hero-image {
-  min-height: 323px;
+  padding: 10px;
+  min-height: 100%;
   overflow: hidden;
   animation: slide-in-hero-image 0.6s ease both;
 }
@@ -630,9 +634,9 @@ a {
 }
 
 .hero-image img {
+  
   width: 100%;
-  height: 100%;
-  min-height: 323px;
+  min-height: 100px;
   object-fit: cover;
   object-position: center;
 }
@@ -642,6 +646,7 @@ a {
   flex-direction: column;
   justify-content: center;
   padding: 48px clamp(32px, 5.5vw, 60px);
+  border-bottom: 1px black;
 }
 
 .hero h1 {

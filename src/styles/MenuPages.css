@@ -27,13 +27,14 @@ body {
 }
 
 .menu-page{
-  min-height: 80vh;
+  min-height: 60vh;
   background: #E9DDCD;
 
 }
 .cafe-menu {
   min-height: 50vh;
   background: #E9DDCD;
+
 }
 
 /* =========================
@@ -248,7 +249,7 @@ body {
   align-items: start;
   gap: 50px;
   padding: 55px 5.7%;
-  background: #E9DDCD;
+  background: #f3ece2;
   color: #92643F;
 }
 

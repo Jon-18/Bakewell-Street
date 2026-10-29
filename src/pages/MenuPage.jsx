@@ -5,33 +5,111 @@ import { useState } from 'react'
 const menuItems = {
   pastries: [
     {
-      name: "Butter croissant",
-      price: "£3.50",
-      description: "Golden layers and a soft buttery centre.",
-      allergens: "Contains wheat, milk, egg",
-      image: "/home-image.jpg",
+      name: "Classic Butter",
+      price: "Big: ₱120 Small: ₱40",
+      image: "/ClassicButter.jpg",
+    },
+       {
+      name: "Almond croissant",
+      price: "Big: ₱130 Small: ₱45",
+      image: "/AlmondCroissant.jpg",
+    },
+       {
+      name: "Pain AU Chocolat",
+      price: "₱140",
+      image: "/PainAUChocolate.jpg",
+    },
+       {
+      name: "Sourdough Baguette",
+      price: "₱150",
+      image: "/SourdoughBaguette.jpg",
+    },
+    {
+      name: "Sourdough Batard",
+      price: "₱3.50",
+      image: "/SourdoughBatard.jpg",
+    },   {
+      name: "Premium Ensaymada",
+      price: "Medium: ₱65 Small: ₱45",
+      image: "/PremiumEnsaymada.jpg",
+    },
+    {
+      name: "Muffin",
+      price: "Medium: ₱70 Small: 50",
+      image: "/Muffin.jpg",
+    },
+    {
+      name: "Cheesebread",
+      price: "₱7.00",
+      image: "/CheeseBread.jpg",
+    },
+    {
+      name: "Chocolate Chip Cookie",
+      price: "Big: ₱70 Small: 35",
+      image: "/ChocolateChip.jpg",
     },
     // Keep your other pastry items here
   ],
 
   coffee: [
     {
-      name: "Espresso",
-      price: "£2.80",
-      description: "A small, full-bodied cup.",
-      allergens: "Coffee",
-      image: "/home-image.jpg",
+      name: "Bakewell Signature Coffee",
+      price: "₱58",
+      image: "",
     },
-    // Keep your other coffee items here
+    {
+      name: "Latte",
+      price: "₱58",
+      image: "",
+    },
+    {
+      name: "Matcha",
+      price: "₱58",
+      image: "",
+    },
+    {
+      name: "Brewed",
+      price: "₱58",
+      image: "",
+    },
+   
   ],
 
-  cakes: [
+  fruitTea: [
     {
-      name: "Chocolate cake",
-      price: "£4.50",
-      description: "Rich chocolate cake with a smooth finish.",
-      allergens: "Contains wheat, milk, egg",
-      image: "/home-image.jpg",
+      name: "Passion Fruit",
+      price: "₱58",
+      image: "",
+    },
+    {
+      name: "Mulberry",
+      price: "₱58",
+      image: "",
+    },
+    {
+      name: "Redgrape Fruit",
+      price: "₱58",
+      image: "",
+    },
+    {
+      name: "Taro",
+      price: "₱58",
+      image: "",
+    },
+    {
+      name: "Avocado",
+      price: "₱58",
+      image: "",
+    },
+    {
+      name: "Dark Choco",
+      price: "₱58",
+      image: "",
+    },
+    {
+      name: "Matcha",
+      price: "₱58",
+      image: "",
     },
   ],
 
@@ -45,15 +123,6 @@ const menuItems = {
     },
   ],
 
-  drinks: [
-    {
-      name: "Iced latte",
-      price: "£4.20",
-      description: "Espresso and cool milk over ice.",
-      allergens: "Contains milk; alternatives may be available",
-      image: "/home-image.jpg",
-    },
-  ],
 };
 
 const categoryInfo = {
@@ -69,23 +138,11 @@ const categoryInfo = {
     description:
       "Your usual, or a new favourite. Carefully made, one cup at a time.",
   },
-  cakes: {
+  fruitTea: {
     eyebrow: "SOMETHING SWEET",
-    title: "Cakes",
+    title: "Fruit Tea & Milk Tea",
     description:
       "A little slice of happiness for your everyday moments.",
-  },
-  sandwiches: {
-    eyebrow: "MADE FOR LUNCH",
-    title: "Sandwiches",
-    description:
-      "Freshly prepared bites for a slower lunch or a busy day.",
-  },
-  drinks: {
-    eyebrow: "SOMETHING REFRESHING",
-    title: "Cold Drinks",
-    description:
-      "Cool, refreshing favourites for every kind of afternoon.",
   },
 };
 
@@ -95,9 +152,7 @@ export default function MenuPages() {
   const categories = [
     { id: "pastries", label: "Pastries" },
     { id: "coffee", label: "Coffee" },
-    { id: "cakes", label: "Cakes" },
-    { id: "sandwiches", label: "Sandwiches" },
-    { id: "drinks", label: "Cold Drinks" },
+    { id: "fruitTea", label: "Fruit Tea & Milk Tea" },  
   ];
 
   const activeCategory = categories.find(

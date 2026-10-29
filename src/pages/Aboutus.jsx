@@ -5,24 +5,24 @@ export default function Aboutus() {
   const moments = [
     {
       id: 1,
-      image: '/home-image.jpg',
-      title: 'Your morning ritual',
+      image: '/AboutUsImage1.jpg',
+      title: 'Your morning pastry',
       description:
-        'A coffee to start the day and a pastry to look forward to.',
+        'Savoring the simple joy of something freshly baked.',
     },
     {
       id: 2,
-      image: '/home-image.jpg',
-      title: 'Time for a catch-up',
+      image: '/AboutUsImage2.jpg',
+      title: 'Time for a pastry',
       description:
-        'A familiar corner for good conversation and second coffees.',
+        'Flaky, sweet, and made for lingering just a little longer.',
     },
     {
       id: 3,
-      image: '/home-image.png',
-      title: 'A moment to yourself',
+      image: '/AboutUsImage3.jpg',
+      title: 'A moment for your favorite pastry',
       description:
-        'A seat by the window. No rush. Just a little room to pause.',
+        'A delicate crumb to savor, making time stand still.',
     },
   ];
   return (
@@ -45,7 +45,7 @@ export default function Aboutus() {
           </p>
 
           <img
-            src="/aboutUsPhoto.jpg"
+            src="/AboutImageMain.jpg"
             alt="Inside the Bakewell Street bakery and coffee shop"
             className="about-image"
           />

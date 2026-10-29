@@ -1,14 +1,10 @@
 
+import InquiryForm from '../components/InquiryForm';
 import '../styles/Franchise.css'
 
 
 export default function Franchise() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
 
-    // Connect your email service or backend here.
-    alert('Thank you! Your inquiry form is ready to be connected to email.');
-  };
   return ( 
   <>
    <main className="franchise-page">
@@ -29,7 +25,7 @@ export default function Franchise() {
         </p>
 
         <img
-          src="/home-image.jpg"
+          src="/franchise.jpg"
           alt="Bakewell Street café with fresh pastries and coffee"
           className="franchise-hero-image"
         />
@@ -78,128 +74,13 @@ export default function Franchise() {
           </p>
 
           <img
-            src="/home-image.jpg"
+            src="/FranchiseImageForm.jpg"
             alt="Guests enjoying coffee together in a café garden"
             className="inquiry-image"
           />
         </div>
 
-        <form className="franchise-form" onSubmit={handleSubmit}>
-          <h3>Let's start a conversation.</h3>
-
-          <p className="form-intro">
-            Tell us about yourself and the kind of Bakewell Street
-            café you hope to create.
-          </p>
-
-          <div className="form-grid">
-            <div className="form-field">
-              <label htmlFor="fullName">Full name *</label>
-              <input
-                id="fullName"
-                name="fullName"
-                type="text"
-                placeholder="Your full name"
-                autoComplete="name"
-                required
-              />
-            </div>
-
-            <div className="form-field">
-              <label htmlFor="email">Email address *</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="you@example.com"
-                autoComplete="email"
-                required
-              />
-            </div>
-
-            <div className="form-field">
-              <label htmlFor="phone">Phone number *</label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="Your phone number"
-                autoComplete="tel"
-                required
-              />
-            </div>
-
-            <div className="form-field">
-              <label htmlFor="location">Preferred location *</label>
-              <input
-                id="location"
-                name="location"
-                type="text"
-                placeholder="City or neighbourhood"
-                required
-              />
-            </div>
-
-            <div className="form-field">
-              <label htmlFor="experience">Business experience *</label>
-              <select
-                id="experience"
-                name="experience"
-                defaultValue=""
-                required
-              >
-                <option value="" disabled>Select an option</option>
-                <option value="first-time">First-time business owner</option>
-                <option value="hospitality">Hospitality experience</option>
-                <option value="business-owner">Existing business owner</option>
-                <option value="franchisee">Franchise experience</option>
-              </select>
-            </div>
-
-            <div className="form-field">
-              <label htmlFor="investment">Investment range *</label>
-              <select
-                id="investment"
-                name="investment"
-                defaultValue=""
-                required
-              >
-                <option value="" disabled>Select a range</option>
-                <option value="under-1m">Under ₱1 million</option>
-                <option value="1m-3m">₱1 million – ₱3 million</option>
-                <option value="3m-5m">₱3 million – ₱5 million</option>
-                <option value="over-5m">Over ₱5 million</option>
-                <option value="exploring">Still exploring</option>
-              </select>
-            </div>
-
-            <div className="form-field form-field-full">
-              <label htmlFor="message">Tell us about your plans *</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                placeholder="Share your vision, preferred location, or any questions..."
-                required
-              />
-            </div>
-          </div>
-
-          <label className="form-consent">
-            <input type="checkbox" name="consent" required />
-            <span>
-              I agree to be contacted about my franchise inquiry.
-            </span>
-          </label>
-
-          <button type="submit" className="franchise-submit">
-            Send my inquiry <span>↗</span>
-          </button>
-
-          <p className="form-note">
-            Your information will be used to respond to your inquiry.
-          </p>
-        </form>
+       <InquiryForm/>
       </section>
 
       {/* Closing Section */}

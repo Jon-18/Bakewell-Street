@@ -178,6 +178,7 @@
   min-width: 0;
   padding: 35px;
   background-color: #FFFCF7;
+   padding-bottom: 9em;
 }
 
 .franchise-form > h3 {
@@ -342,6 +343,7 @@
 @media (max-width: 900px) {
   .franchise-intro {
     padding: 50px 5% 30px;
+
   }
 
   .franchise-highlights {
@@ -357,6 +359,7 @@
 
   .franchise-form {
     padding: 25px;
+   
   }
 
   .form-grid {

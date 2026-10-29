@@ -179,7 +179,7 @@ export default function Branches() {
         <section className="hero">
           <div className="hero-image">
             <img
-              src="/home-image.jpg"
+              src="/BranchImage.jpg"
               alt="A welcoming outdoor café with tables and greenery"
             />
           </div>
