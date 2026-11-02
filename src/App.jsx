@@ -11,7 +11,7 @@ import Branches from "./pages/Branches.jsx";
 import Franchise from "./pages/Franchise.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
-import "./styles/home.css"
+import "./styles/Home.css"
 
 function App() {
 
