@@ -1,5 +1,4 @@
 import "../styles/MenuPages.css"
-import "../styles/Menu.css"
 import { useState } from 'react'
 
 const menuItems = {

@@ -216,8 +216,8 @@ export default function Branches() {
           </div>
 
           <a className="menu-button" href="/menu">
-            <span>Explore the menu</span>
-            <span className="arrow" aria-hidden="true">↗</span>
+            Explore the menu
+            <span>↗</span>
           </a>
         </section>
         </div>

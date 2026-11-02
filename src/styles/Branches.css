@@ -724,50 +724,56 @@ a {
 
 }
 
-.menu-copy {
-  min-width: 0;
-}
-
-.menu-section h2 {
-  font-size: clamp(30px, 3.5vw, 38px);
-  line-height: 1.15;
-}
-
-.menu-copy p,
-.menu-placeholder p {
-  font-family: Inter, sans-serif;
-  margin: 12px 0 0;
-  color: #716B63;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
 .menu-button {
   display: inline-flex;
-  flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  min-width: 148px;
-  min-height: 42px;
-  padding: 12px 18px;
+  gap: 30px;
+  flex-shrink: 0;
+  min-width: 246px;
+  padding: 19px 24px;
   background-color: #20201D;
-  color: #F5EFE6;
-  font-size: 11px;
-  transition: background 180ms ease;
+  color: #E9DDCD;
   font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.menu-button:hover,
-.menu-button:focus-visible {
-
-  background: #181815;
+.menu-button span {
+  font-size: 17px;
+  transition: transform 0.3s ease;
 }
 
-.menu-button:focus-visible {
-  outline: 2px solid var(--terracotta);
-  outline-offset: 4px;
+.menu-button:hover {
+  background: var(--brown);
 }
+
+.menu-button:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* =========================
+   ANIMATIONS
+========================= */
+
+
 
 .arrow {
   font-size: 14px;

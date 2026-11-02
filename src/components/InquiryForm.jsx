@@ -1,6 +1,5 @@
 
 import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import "../styles/Franchise.css";
 
 function InquiryForm() {
@@ -48,7 +47,7 @@ const sendEmail = async (e) => {
        console.log(data)
 
     setStatus(
-      "Your inquiry has been submitted. Please check your email for a response."
+      "Your submission has been successfully received. Our team will review your information and get in touch with you as soon as possible."
     );
     setIsSuccess(true);
     form.current.reset();
@@ -167,10 +166,6 @@ const sendEmail = async (e) => {
           {status}
         </p>
       )}
-
-      <p className="form-note">
-        Your information will be used to respond to your inquiry.
-      </p>
     </form>
   );
 }
