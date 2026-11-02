@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InitialLoaderCleanup from "./components/InitialLoaderCleanup";
 import Navbar from './components/Navbars.jsx';
-import Footer from "./components/Footer";
+import Footer from "./components/Footer.jsx";
 import PageLoader from './pages/PageLoader.jsx'
 
-import Home from "./pages/Home";
-import AboutUs from "./pages/Aboutus";
-import Menu from "./pages/MenuPage";
-import Branches from "./pages/Branches";
-import Franchise from "./pages/Franchise";
-import NotFound from "./pages/NotFound";
+import Home from "./pages/Home.jsx";
+import AboutUs from "./pages/Aboutus.jsx";
+import Menu from "./pages/MenuPage.jsx";
+import Branches from "./pages/Branches.jsx";
+import Franchise from "./pages/Franchise.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 import "./styles/home.css"
 
