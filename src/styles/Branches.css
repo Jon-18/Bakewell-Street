@@ -1,564 +1,11 @@
 
-/* Branches Section */
-
+/* ========================================
+   GLOBAL STYLES
+======================================== */
 
 body {
   margin: 0;
 }
-.branches-section {
-  background-color: #E9DDCD;
-  color: #716B63;
-  padding: 55px 5.4% 65px;
-  width: 100%;
-  box-sizing: border-box;
-  border-bottom: 0.5px #716B63 solid;
-}
-
-.branches-section *,
-.branches-section *::before,
-.branches-section *::after {
-  box-sizing: border-box;
-}
-
-/* Header */
-.branches-header {
-  margin-bottom: 40px;
-}
-
-.branches-eyebrow {
-  color: #92643F;
-  font-family: Inter, sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  margin: 0 0 20px;
-}
-
-.branches-title {
-  font-family: "Cormorant Garamond", serif;
-  color: #92643F;
-  font-size: clamp(38px, 5.2vw, 72px);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -1px;
-  margin: 0 0 16px;
-}
-
-.branches-count {
-  display: inline-block;
-  padding: 13px 20px;
-  background-color: #20201D;
-  color: #E9DDCD;
-  font-family: Inter, sans-serif;
-  font-size: 12px;
-}
-
-/* Branch Cards */
-.branches-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-}
-
-.branch-card {
-  min-width: 0;
-  animation: fade-in-branch-card 0.7s ease;
-}
-
-@keyframes fade-in-branch-card{
-  from {
-    opacity: 0;
-    transform: translateX(0px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.branch-image {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1.3 / 1;
-  object-fit: cover;
-  margin-bottom: 25px;
-}
-
-.branch-label {
-  color: #92643F;
-  font-family: Inter, sans-serif;
-  font-size: 9px;
-  font-weight: 600;
-  line-height: 1.5;
-  margin: 0 0 16px;
-}
-
-.branch-name {
-  color: #20201D;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(28px, 2.8vw, 40px);
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 0 0 18px;
-}
-
-/* Branch Details */
-.branch-details {
-  border-top: 1px solid #D9CDBD;
-  padding-top: 20px;
-}
-
-.branch-detail {
-  margin-bottom: 22px;
-}
-
-.branch-detail h4 {
-  color: #20201D;
-  font-family: Inter, sans-serif;
-  font-size: 9px;
-  font-weight: 700;
-  margin: 0 0 10px;
-}
-
-.branch-detail p,
-.branch-features {
-  color: #716B63;
-  font-family: Inter, sans-serif;
-  font-size: 13px;
-  line-height: 1.8;
-  overflow-wrap: anywhere;
-  margin: 0;
-}
-
-.branch-features {
-  margin-top: 5px;
-}
-
-/* Previous / Next Pagination */
-.branches-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 55px;
-}
-
-.branch-page-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 46px;
-  padding: 0 22px;
-  border: 1px solid #92643F;
-  background-color: transparent;
-  color: #92643F;
-  font-family: Inter, sans-serif;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.branch-page-button:hover:not(:disabled) {
-  background-color: #92643F;
-  color: #E9DDCD;
-}
-
-.branch-page-button:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-.branch-page-number {
-  color: #716B63;
-  font-family: Inter, sans-serif;
-  font-size: 12px;
-  white-space: nowrap;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-  .branches-section {
-    padding: 45px 5% 55px;
-  }
-
-  .branches-title {
-    font-size: clamp(38px, 6vw, 54px);
-  }
-
-  .branches-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 35px 22px;
-  }
-
-  .branch-name {
-    font-size: 32px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .branches-section {
-    padding: 38px 22px 45px;
-  }
-
-  .branches-header {
-    margin-bottom: 30px;
-  }
-
-  .branches-eyebrow {
-    font-size: 9px;
-    line-height: 1.7;
-    margin-bottom: 16px;
-  }
-
-  .branches-title {
-    font-size: clamp(34px, 8.5vw, 46px);
-    line-height: 1.15;
-    letter-spacing: -0.5px;
-    margin-bottom: 20px;
-  }
-
-  .branches-grid {
-    grid-template-columns: 1fr;
-    gap: 38px;
-  }
-
-  .branch-image {
-    aspect-ratio: 1.25 / 1;
-    margin-bottom: 20px;
-  }
-
-  .branch-label {
-    margin-bottom: 12px;
-  }
-
-  .branch-name {
-    font-size: 34px;
-    margin-bottom: 16px;
-  }
-
-  .branch-details {
-    padding-top: 17px;
-  }
-
-  .branch-detail {
-    margin-bottom: 20px;
-  }
-
-  .branch-detail p,
-  .branch-features {
-    font-size: 13px;
-  }
-
-  .branches-pagination {
-    gap: 12px;
-    margin-top: 40px;
-  }
-
-  .branch-page-button {
-    min-height: 44px;
-    padding: 0 14px;
-    font-size: 11px;
-  }
-}
-
-/* Small phones */
-@media (max-width: 360px) {
-  .branches-section {
-    padding-right: 16px;
-    padding-left: 16px;
-  }
-
-  .branches-title {
-    font-size: 32px;
-  }
-
-  .branch-name {
-    font-size: 30px;
-  }
-
-  .branches-pagination {
-    gap: 8px;
-  }
-
-  .branch-page-button {
-    padding: 0 10px;
-  }
-}
-
-
-
-
-/* Branches Section */
-.branches-section {
-  background-color: #E9DDCD;
-  color: #716B63;
-  padding: 55px 5.4% 65px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.branches-section *,
-.branches-section *::before,
-.branches-section *::after {
-  box-sizing: border-box;
-}
-
-/* Header */
-.branches-header {
-  margin-bottom: 40px;
-}
-
-.branches-eyebrow {
-  color: #92643F;
-  font-family: Inter, sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  margin: 0 0 20px;
-}
-
-.branches-title {
-  font-family: "Cormorant Garamond", serif;
-  color: #92643F;
-  font-size: clamp(38px, 5.2vw, 72px);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -1px;
-  margin: 0 0 16px;
-}
-
-.branches-count {
-  display: inline-block;
-  padding: 13px 20px;
-  background-color: #20201D;
-  color: #E9DDCD;
-  font-family: Inter, sans-serif;
-  font-size: 12px;
-}
-
-/* Branch Cards */
-.branches-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-}
-
-.branch-card {
-  min-width: 0;
-}
-
-.branch-image {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1.3 / 1;
-  object-fit: cover;
-  margin-bottom: 25px;
-}
-
-.branch-label {
-  color: #92643F;
-  font-family: Inter, sans-serif;
-  font-size: 9px;
-  font-weight: 600;
-  line-height: 1.5;
-  margin: 0 0 16px;
-}
-
-.branch-name {
-  color: #20201D;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(28px, 2.8vw, 40px);
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 0 0 18px;
-}
-
-/* Branch Details */
-.branch-details {
-  border-top: 1px solid #D9CDBD;
-  padding-top: 20px;
-}
-
-.branch-detail {
-  margin-bottom: 22px;
-}
-
-.branch-detail h4 {
-  color: #20201D;
-  font-family: Inter, sans-serif;
-  font-size: 9px;
-  font-weight: 700;
-  margin: 0 0 10px;
-}
-
-.branch-detail p,
-.branch-features {
-  color: #716B63;
-  font-family: Inter, sans-serif;
-  font-size: 13px;
-  line-height: 1.8;
-  overflow-wrap: anywhere;
-  margin: 0;
-}
-
-.branch-features {
-  margin-top: 5px;
-}
-
-/* Previous / Next Pagination */
-.branches-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 55px;
-}
-
-.branch-page-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 46px;
-  padding: 0 22px;
-  border: 1px solid #92643F;
-  background-color: transparent;
-  color: #92643F;
-  font-family: Inter, sans-serif;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.branch-page-button:hover:not(:disabled) {
-  background-color: #92643F;
-  color: #FFFFFF;
-}
-
-.branch-page-button:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-.branch-page-number {
-  color: #716B63;
-  font-family: Inter, sans-serif;
-  font-size: 12px;
-  white-space: nowrap;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-  .branches-section {
-    padding: 45px 5% 55px;
-  }
-
-  .branches-title {
-    font-size: clamp(38px, 6vw, 54px);
-  }
-
-  .branches-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 35px 22px;
-  }
-
-  .branch-name {
-    font-size: 32px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .branches-section {
-    padding: 38px 22px 45px;
-  }
-
-  .branches-header {
-    margin-bottom: 30px;
-  }
-
-  .branches-eyebrow {
-    font-size: 9px;
-    line-height: 1.7;
-    margin-bottom: 16px;
-  }
-
-  .branches-title {
-    font-size: clamp(34px, 8.5vw, 46px);
-    line-height: 1.15;
-    letter-spacing: -0.5px;
-    margin-bottom: 20px;
-  }
-
-  .branches-grid {
-    grid-template-columns: 1fr;
-    gap: 38px;
-  }
-
-  .branch-image {
-    aspect-ratio: 1.25 / 1;
-    margin-bottom: 20px;
-  }
-
-  .branch-label {
-    margin-bottom: 12px;
-  }
-
-  .branch-name {
-    font-size: 34px;
-    margin-bottom: 16px;
-  }
-
-  .branch-details {
-    padding-top: 17px;
-  }
-
-  .branch-detail {
-    margin-bottom: 20px;
-  }
-
-  .branch-detail p,
-  .branch-features {
-    font-size: 13px;
-  }
-
-  .branches-pagination {
-    gap: 12px;
-    margin-top: 40px;
-  }
-
-  .branch-page-button {
-    min-height: 44px;
-    padding: 0 14px;
-    font-size: 11px;
-  }
-}
-
-/* Small phones */
-@media (max-width: 360px) {
-  .branches-section {
-    padding-right: 16px;
-    padding-left: 16px;
-  }
-
-  .branches-title {
-    font-size: 32px;
-  }
-
-  .branch-name {
-    font-size: 30px;
-  }
-
-  .branches-pagination {
-    gap: 8px;
-  }
-
-  .branch-page-button {
-    padding: 0 10px;
-  }
-}
-
 
 img {
   display: block;
@@ -570,6 +17,236 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* ========================================
+   BRANCHES SECTION
+======================================== */
+
+.branches-section {
+  background-color: #E9DDCD;
+  color: #716B63;
+  padding: 55px 5.4% 65px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 0.5px solid #716B63;
+}
+
+.branches-section *,
+.branches-section *::before,
+.branches-section *::after {
+  box-sizing: border-box;
+}
+
+/* Header */
+
+.branches-header {
+  margin-bottom: 40px;
+}
+
+.branches-eyebrow {
+  color: #92643F;
+  font-family: Inter, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+.branches-title {
+  font-family: "Cormorant Garamond", serif;
+  color: #92643F;
+  font-size: clamp(38px, 5.2vw, 72px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0 0 16px;
+}
+
+.branches-count {
+  display: inline-block;
+  padding: 13px 20px;
+  background-color: #20201D;
+  color: #E9DDCD;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+}
+
+/* ========================================
+   BRANCH CARDS
+======================================== */
+
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.branch-card {
+  min-width: 0;
+  animation: fade-in-branch-card 0.7s ease both;
+}
+
+@keyframes fade-in-branch-card {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   BRANCH IMAGE
+======================================== */
+
+.branch-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.branch-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.3 / 1;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 0;
+  transition: transform 0.6s ease;
+}
+
+.branch-image-wrapper:hover .branch-image {
+  transform: scale(1.025);
+}
+
+/* NEXT BUTTON ON IMAGE */
+
+.branch-next-button {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: #E9DDCD;
+  color: #92643F;
+
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+
+  cursor: pointer;
+  z-index: 5;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.branch-next-button:hover {
+  background-color: #92643F;
+  color: #E9DDCD;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.branch-next-button:focus-visible {
+  outline: 2px solid #92643F;
+  outline-offset: 4px;
+}
+
+/* ========================================
+   BRANCH INFORMATION
+======================================== */
+
+.branch-label {
+  color: #92643F;
+  font-family: Inter, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.branch-name {
+  color: #20201D;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(28px, 2.8vw, 40px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 18px;
+}
+
+/* ========================================
+   BRANCH DETAILS
+======================================== */
+
+.branch-details {
+  border-top: 1px solid #D9CDBD;
+  padding-top: 20px;
+}
+
+.branch-detail {
+  margin-bottom: 22px;
+}
+
+.branch-detail h4 {
+  color: #20201D;
+  font-family: Inter, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.branch-detail p,
+.branch-features {
+  color: #716B63;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+.branch-features {
+  margin-top: 5px;
+}
+
+/* ========================================
+   PAGE INDICATOR
+======================================== */
+
+.branches-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 45px;
+}
+
+.branch-page-number {
+  color: #716B63;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* ========================================
+   CAFE PAGE
+======================================== */
 
 .cafe-page {
   width: 100%;
@@ -586,11 +263,10 @@ a {
 .menu-section h2,
 .menu-placeholder h2 {
   margin: 0;
-  color:#92643F;
+  color: #92643F;
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
   letter-spacing: -0.025em;
-
 }
 
 .eyebrow {
@@ -603,15 +279,15 @@ a {
   font-family: Inter, sans-serif;
 }
 
-/* =========================
+/* ========================================
    DESKTOP HERO
-========================= */
+======================================== */
 
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #E9DDCD;
-  height:48em;
+  height: 48em;
 }
 
 .hero-image {
@@ -634,7 +310,6 @@ a {
 }
 
 .hero-image img {
-  
   width: 100%;
   min-height: 100px;
   object-fit: cover;
@@ -646,7 +321,7 @@ a {
   flex-direction: column;
   justify-content: center;
   padding: 48px clamp(32px, 5.5vw, 60px);
-  border-bottom: 1px black;
+  border-bottom: 1px solid black;
 }
 
 .hero h1 {
@@ -666,9 +341,9 @@ a {
   line-height: 1.8;
 }
 
-/* =========================
+/* ========================================
    VISIT SECTION
-========================= */
+======================================== */
 
 .visit-section {
   padding: 58px clamp(32px, 5.5vw, 60px) 60px;
@@ -710,9 +385,9 @@ a {
   line-height: 1.8;
 }
 
-/* =========================
-   MENU BANNER
-========================= */
+/* ========================================
+   MENU SECTION
+======================================== */
 
 .menu-section {
   display: flex;
@@ -721,7 +396,6 @@ a {
   gap: 28px;
   padding: 48px clamp(32px, 5.5vw, 60px);
   background-color: #E9DDCD;
-
 }
 
 .menu-button {
@@ -747,16 +421,34 @@ a {
 }
 
 .menu-button:hover {
-  background: var(--brown);
+  background: #92643F;
 }
 
 .menu-button:hover span {
   transform: translate(3px, -3px);
 }
 
-/* =========================
+/* ========================================
+   MENU PLACEHOLDER
+======================================== */
+
+.menu-placeholder {
+  padding: 70px 28px;
+  text-align: center;
+  background: #F6F0E6;
+}
+
+.menu-placeholder h2 {
+  font-size: 38px;
+}
+
+.menu-placeholder .eyebrow {
+  margin-bottom: 12px;
+}
+
+/* ========================================
    ANIMATIONS
-========================= */
+======================================== */
 
 @keyframes fade-in {
   from {
@@ -769,38 +461,18 @@ a {
     transform: translateY(0);
   }
 }
-/* =========================
-   ANIMATIONS
-========================= */
-
-
 
 .arrow {
   font-size: 14px;
   line-height: 1;
 }
 
-/* Optional menu destination */
-
-.menu-placeholder {
-  padding: 70px 28px;
-  text-align: center;
-  background: var(--paper);
-}
-
-.menu-placeholder h2 {
-  font-size: 38px;
-}
-
-.menu-placeholder .eyebrow {
-  margin-bottom: 12px;
-}
-
-/* =========================
-   TABLET: 768px–1024px
-========================= */
+/* ========================================
+   TABLET: 761px–1024px
+======================================== */
 
 @media (min-width: 761px) and (max-width: 1024px) {
+
   .cafe-page {
     width: calc(100% - 12px);
   }
@@ -850,15 +522,33 @@ a {
   .menu-section h2 {
     font-size: 32px;
   }
+
+  .branches-section {
+    padding: 45px 5% 55px;
+  }
+
+  .branches-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px 22px;
+  }
+
+  .branches-title {
+    font-size: clamp(38px, 6vw, 54px);
+  }
+
+  .branch-name {
+    font-size: 32px;
+  }
 }
 
-/* =========================
-   MOBILE: up to 760px
-========================= */
+/* ========================================
+   MOBILE: UP TO 760px
+======================================== */
 
 @media (max-width: 760px) {
+
   body {
-    background: var(--paper);
+    background: #E9DDCD;
   }
 
   .cafe-page {
@@ -866,10 +556,11 @@ a {
     margin: 0;
   }
 
-  /* Stack photo above the hero text */
+  /* Hero */
 
   .hero {
     grid-template-columns: minmax(0, 1fr);
+    height: auto;
     min-height: auto;
   }
 
@@ -909,7 +600,7 @@ a {
     line-height: 1.85;
   }
 
-  /* Visit information becomes one column */
+  /* Visit section */
 
   .visit-section {
     padding: 42px 24px 46px;
@@ -942,7 +633,7 @@ a {
     line-height: 1.8;
   }
 
-  /* Stack the menu title and button */
+  /* Menu section */
 
   .menu-section {
     align-items: flex-start;
@@ -971,7 +662,6 @@ a {
     font-size: 10px;
   }
 
-
   .menu-placeholder {
     padding: 48px 24px;
   }
@@ -984,13 +674,88 @@ a {
   .menu-placeholder p {
     font-size: 12px;
   }
+
+  /* Branches */
+
+  .branches-section {
+    padding: 38px 22px 45px;
+  }
+
+  .branches-header {
+    margin-bottom: 30px;
+  }
+
+  .branches-eyebrow {
+    font-size: 9px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .branches-title {
+    font-size: clamp(34px, 8.5vw, 46px);
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+
+  .branches-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+  }
+
+  .branch-image-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .branch-image {
+    aspect-ratio: 1.25 / 1;
+  }
+
+  .branch-next-button {
+    width: 44px;
+    height: 44px;
+    right: 14px;
+    font-size: 21px;
+  }
+
+  .branch-label {
+    margin-bottom: 12px;
+  }
+
+  .branch-name {
+    font-size: 34px;
+    margin-bottom: 16px;
+  }
+
+  .branch-details {
+    padding-top: 17px;
+  }
+
+  .branch-detail {
+    margin-bottom: 20px;
+  }
+
+  .branch-detail p,
+  .branch-features {
+    font-size: 13px;
+  }
+
+  .branches-pagination {
+    gap: 12px;
+    margin-top: 35px;
+  }
+
+  .branch-page-number {
+    font-size: 11px;
+  }
 }
 
-/* =========================
-   SMALL MOBILE: up to 380px
-========================= */
+/* ========================================
+   SMALL MOBILE: UP TO 380px
+======================================== */
 
 @media (max-width: 380px) {
+
   .hero-image {
     height: 230px;
   }
@@ -1030,11 +795,33 @@ a {
   .menu-button {
     max-width: none;
   }
+
+  .branches-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .branches-title {
+    font-size: 32px;
+  }
+
+  .branch-name {
+    font-size: 30px;
+  }
+
+  .branch-next-button {
+    width: 40px;
+    height: 40px;
+    right: 12px;
+  }
 }
 
-/* Accessibility: reduce animations when requested */
+/* ========================================
+   ACCESSIBILITY
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
@@ -1044,5 +831,65 @@ a {
   *::after {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+
+
+/* Branch Navigation */
+.branch-navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+/* Navigation Buttons */
+.branch-nav-button {
+  background: #9B6745;
+  color: #F3E8D9;
+  border: 1px solid #9B6745;
+  padding: 13px 26px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+/* Hover Effect */
+.branch-nav-button:hover {
+  background: transparent;
+  color: #9B6745;
+  border-color: #9B6745;
+  transform: translateY(-2px);
+}
+
+/* Click Effect */
+.branch-nav-button:active {
+  transform: translateY(0);
+}
+
+/* Keyboard Accessibility */
+.branch-nav-button:focus-visible {
+  outline: 2px solid #9B6745;
+  outline-offset: 4px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .branch-navigation {
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  .branch-nav-button {
+    padding: 12px 20px;
+    font-size: 11px;
   }
 }

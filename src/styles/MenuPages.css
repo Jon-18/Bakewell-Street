@@ -26,15 +26,14 @@ body {
   margin: 0;
 }
 
-.menu-page{
+.menu-page {
   min-height: 60vh;
   background: #E9DDCD;
-
 }
+
 .cafe-menu {
   min-height: 50vh;
   background: #E9DDCD;
-
 }
 
 /* =========================
@@ -85,8 +84,8 @@ body {
   padding-bottom: 18px;
   border-bottom: 1px solid #92643F;
   padding-left: 50px;
-
 }
+
 .menu-links {
   display: flex;
   align-items: center;
@@ -136,7 +135,7 @@ body {
 
 .pastry-section,
 .coffee-section {
-  background:#E9DDCD;
+  background: #E9DDCD;
 }
 
 .menu-heading {
@@ -160,7 +159,6 @@ body {
   font-size: clamp(32px, 4vw, 70px);
   font-weight: 400;
   font-family: "Cormorant Garamond", serif;
-  font-size: 45px;
 }
 
 .heading-description {
@@ -179,20 +177,32 @@ body {
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  gap: 20px;
+  align-items: start;
+  width: 100%;
 }
 
 .menu-item {
   min-width: 0;
+  width: 100%;
+  text-align: center;
+
+  /* FIX: Remove excessive right padding */
+  padding: 0;
 }
 
 .menu-image {
   display: block;
-  width: 85%;
-  aspect-ratio: 1.15 / 1;
-  margin-bottom: 18px;
+  width: 100%;
+  height: 450px;
+  margin: 0 auto 10px;
+
   background: var(--cream-dark);
-  object-fit: cover;
+
+  /* Keep image proportions */
+  object-fit: contain;
+  object-position: center;
+
   transition: transform 0.6s ease;
 }
 
@@ -201,7 +211,7 @@ body {
 }
 
 .item-title-row {
-  width: 85%;
+  width: 100%;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -209,17 +219,16 @@ body {
 }
 
 .item-title-row h3 {
-  color:#92643F;
+  color: #92643F;
   font-size: 20px;
   margin: 0;
-  font-size: 20px;
   font-weight: 400;
 }
 
 .item-price {
   flex-shrink: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size:15px;
+  font-size: 15px;
 }
 
 .item-description,
@@ -256,7 +265,7 @@ body {
 .order-note-title {
   max-width: 330px;
   margin: 0;
-  color:#92643F;
+  color: #92643F;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(30px, 3vw, 40px);
   font-weight: 400;
@@ -289,7 +298,7 @@ body {
   gap: 40px;
   padding: 55px 5.7%;
   background: #E9DDCD;
-  color:#92643F;
+  color: #92643F;
 }
 
 .slogan-content {
@@ -365,6 +374,20 @@ body {
 ========================= */
 
 @media (max-width: 900px) {
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px 18px;
+  }
+
+  .menu-image {
+    height: 380px;
+  }
+
+  .menu-item {
+    padding: 0;
+  }
+
   .order-note {
     grid-template-columns: minmax(0, 30%) minmax(0, 1fr);
     gap: 30px;
@@ -392,6 +415,7 @@ body {
 ========================= */
 
 @media (max-width: 700px) {
+
   .menu-nav {
     flex-wrap: wrap;
     padding: 14px 5%;
@@ -420,20 +444,45 @@ body {
 
   .heading-description {
     margin: 0;
-    padding-right: 40px;
+    padding-right: 0;
   }
 
+  /* Two larger image columns */
   .menu-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px 14px;
+    gap: 28px 14px;
   }
 
+  .menu-item {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* FIX: Make mobile images larger */
   .menu-image {
-    margin-bottom: 12px;
+    width: 100%;
+    height: 300px;
+    margin: 0 auto 12px;
+    object-fit: contain;
+    object-position: center;
   }
 
   .item-title-row {
+    width: 100%;
     flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .item-title-row h3 {
+    font-size: 17px;
+  }
+
+  .item-price {
+    font-size: 14px;
+  }
+
+  .item-description {
+    font-size: 11px;
   }
 
   .order-note {
@@ -483,6 +532,7 @@ body {
 ========================= */
 
 @media (max-width: 480px) {
+
   .menu-nav {
     padding-inline: 16px;
   }
@@ -490,11 +540,37 @@ body {
   .menu-disclaimer {
     font-size: 8px;
   }
+
+  .menu-grid {
+    gap: 24px 12px;
+  }
+
+  .menu-image {
+    height: 260px;
+  }
+
+  .item-title-row h3 {
+    font-size: 16px;
+  }
 }
 
+/* =========================
+   EXTRA SMALL MOBILE
+========================= */
+
 @media (max-width: 360px) {
+
   .menu-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .menu-image {
+    height: 320px;
+  }
+
+  .item-title-row h3 {
+    font-size: 19px;
   }
 }
 
@@ -503,6 +579,7 @@ body {
 ========================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   .menu-section {
     animation: none;
   }

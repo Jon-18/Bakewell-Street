@@ -50,26 +50,65 @@ const menuItems = {
     // Keep your other pastry items here
   ],
 
+  morningPastry: [
+    {
+      name: "Pandesal",
+      price: "₱5",
+      image: "/Morning/Pandesal.jpg",
+    },
+    {
+      name: "Cheese Pandesal",
+      price: "₱7",
+      image: "/Morning/CheesePandesal.jpg",
+    },
+    {
+      name: "Cornbeef Pandesal",
+      price: "₱68",
+      image: "/Morning/TunaPandesal.jpg",
+    },
+    {
+      name: "Tuna Pandesal",
+      price: "₱68",
+      image: "/Morning/TunaPandesal.jpg",
+    },
+    {
+      name: "Spanish Bread",
+      price: "₱12",
+      image: "/Morning/SpanishBread.jpg",
+    },
+    {
+      name: "Ube Cheese",
+      price: "₱30",
+      image: "/Morning/UbeCheese.jpg",
+    },
+    {
+      name: "Ube Milky",
+      price: "₱25",
+      image: "/Morning/UbeMilky.jpg",
+    },
+  ],
+
+
   coffee: [
     {
       name: "Bakewell Signature Coffee",
       price: "₱58",
-      image: "",
+      image: "/Drinks/BakewellSignatureCoffee.jpg",
     },
     {
       name: "Latte",
       price: "₱58",
-      image: "",
+      image: "/Drinks/Latte.jpg",
     },
     {
       name: "Matcha",
       price: "₱58",
-      image: "",
+      image: "/Drinks/Matcha.jpg",
     },
     {
       name: "Brewed",
       price: "₱58",
-      image: "",
+      image: "/Drinks/Brewed.jpg",
     },
    
   ],
@@ -78,54 +117,51 @@ const menuItems = {
     {
       name: "Passion Fruit",
       price: "₱58",
-      image: "",
+      image: "/Drinks/PassionFruit.jpg",
     },
     {
       name: "Mulberry",
       price: "₱58",
-      image: "",
+      image: "/Drinks/Brewed.jpg",
     },
     {
       name: "Redgrape Fruit",
       price: "₱58",
-      image: "",
+      image: "/Drinks/RedGrapeFruit.jpg",
     },
     {
       name: "Taro",
       price: "₱58",
-      image: "",
+      image: "/Drinks/Taro.jpg",
     },
     {
       name: "Avocado",
       price: "₱58",
-      image: "",
+      image: "/Drinks/Avocado.jpg",
     },
     {
       name: "Dark Choco",
       price: "₱58",
-      image: "",
+      image: "/Drinks/DarkChoco.jpg",
     },
     {
       name: "Matcha",
       price: "₱58",
-      image: "",
+      image: "/Drinks/Matcha.jpg",
     },
   ],
 
-  sandwiches: [
-    {
-      name: "Chicken sandwich",
-      price: "£6.50",
-      description: "A freshly prepared sandwich for lunch.",
-      allergens: "Check ingredients before ordering",
-      image: "/home-image.jpg",
-    },
-  ],
-
+  
 };
 
 const categoryInfo = {
   pastries: {
+    eyebrow: "FROM THE OVEN",
+    title: "Pastries",
+    description:
+      "Golden layers, soft centres and something to make your day.",
+  },
+  morningPastry: {
     eyebrow: "FROM THE OVEN",
     title: "Pastries",
     description:
@@ -150,6 +186,7 @@ export default function MenuPages() {
   
   const categories = [
     { id: "pastries", label: "Pastries" },
+    { id: "morningPastry", label: "Morning Pastry" },
     { id: "coffee", label: "Coffee" },
     { id: "fruitTea", label: "Fruit Tea & Milk Tea" },  
   ];

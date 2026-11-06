@@ -6,57 +6,15 @@ const branches = [
     id: 1,
     image: '/home-image.jpg',
     label: 'THE ORIGINAL NEIGHBOURHOOD SPOT',
-    name: 'Riverside',
-    address: '12 River Lane, London SE1 2AB',
-    hours: 'Mon–Fri 7:30–18:00 · Sat–Sun 8:00–17:00',
-    features: 'Indoor seating · Takeaway · Step-free entrance',
+    name: 'Jolly Industrial Park',
+    address: 'Mark 1 Bldg. Jolly Industrial Park, Bypass access road, Brgy. parulan, Plaridel, Bulacan',
   },
   {
     id: 2,
     image: '/home-image.jpg',
     label: 'A LEAFY CORNER FOR COFFEE & CATCH-UPS',
-    name: 'Garden Quarter',
-    address: '42 Garden Street, London N1 4CD',
-    hours: 'Mon–Fri 8:00–18:00 · Sat–Sun 8:30–17:00',
-    features: 'Courtyard seating · Takeaway · Dog-friendly outdoors',
-  },
-  {
-    id: 3,
-    image: '/home-image.jpg',
-    label: 'GOOD MORNINGS, EVEN ON THE MOVE',
-    name: 'Station House',
-    address: '7 Station Road, London E2 8EF',
-    hours: 'Mon–Fri 7:00–18:00 · Sat–Sun 8:00–16:00',
-    features: 'Indoor seating · Takeaway · Near public transport',
-  },
-
-  // Add more branches here
-  {
-    id: 4,
-    image: '/home-image.jpg',
-    label: 'YOUR LITTLE CITY RETREAT',
-    name: 'Market Square',
-    address: '18 Market Street, London',
-    hours: 'Mon–Fri 7:30–18:00 · Sat–Sun 8:00–17:00',
-    features: 'Indoor seating · Takeaway',
-  },
-  {
-    id: 5,
-    image: '/home-image.jpg',
-    label: 'A QUIET CORNER TO UNWIND',
-    name: 'Willow Lane',
-    address: '25 Willow Lane, London',
-    hours: 'Mon–Fri 8:00–18:00 · Sat–Sun 8:30–17:00',
-    features: 'Outdoor seating · Takeaway',
-  },
-  {
-    id: 6,
-    image: '/home-image.jpg',
-    label: 'FRESH COFFEE FOR BUSY DAYS',
-    name: 'Central Corner',
-    address: '9 Central Road, London',
-    hours: 'Mon–Fri 7:00–18:00 · Sat–Sun 8:00–16:00',
-    features: 'Indoor seating · Takeaway · Near public transport',
+    name: 'Lucena City',
+    address: 'Dinglasan Bldg., Quezon Avenue, Brgy 1, Lucena City, 4301 '
   },
 ];
 
@@ -71,29 +29,26 @@ const visitTips = [
     description:
       "Speak to the café team before ordering. They can help confirm ingredients, milk alternatives and allergen information.",
   },
-  {
-    title: "Bringing a group?",
-    description:
-      "Check seating and accessibility with your chosen café in advance. Facilities and opening times can change.",
-  },
+
 ];
 
 const BRANCHES_PER_PAGE = 3;
 
 export default function Branches() {
-   const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+   
+const BRANCHES_PER_PAGE = 2;
 
-   const totalPages = Math.ceil(
-    branches.length / BRANCHES_PER_PAGE
-    );
+const totalPages = Math.ceil(
+  branches.length / BRANCHES_PER_PAGE
+);
 
-    const startIndex = currentPage * BRANCHES_PER_PAGE;
+const startIndex = currentPage * BRANCHES_PER_PAGE;
 
-    const visibleBranches = branches.slice(
-      startIndex,
-      startIndex + BRANCHES_PER_PAGE
-    );
-
+const visibleBranches = branches.slice(
+  startIndex,
+  startIndex + BRANCHES_PER_PAGE
+);
 
   return (
     <>
@@ -112,68 +67,77 @@ export default function Branches() {
           </span>
         </div>
 
-        <div className="branches-grid">
-          {visibleBranches.map((branch) => (
-            <article className="branch-card" key={branch.id}>
-              <img
-                src={branch.image}
-                alt={`${branch.name} café`}
-                className="branch-image"
-              />
+     
 
-              <p className="branch-label">{branch.label}</p>
+<div className="branches-grid">
+  {visibleBranches.map((branch) => (
+    <article className="branch-card" key={branch.id}>
 
-              <h3 className="branch-name">{branch.name}</h3>
+      <div className="branch-image-wrapper">
+        <img
+          src={branch.image}
+          alt={`${branch.name} café`}
+          className="branch-image"
+        />
+      </div>
 
-              <div className="branch-details">
-                <div className="branch-detail">
-                  <h4>FIND US</h4>
-                  <p>{branch.address}</p>
-                </div>
+      <p className="branch-label">
+        {branch.label}
+      </p>
 
-                <div className="branch-detail">
-                  <h4>OPENING HOURS</h4>
-                  <p>{branch.hours}</p>
-                </div>
+      <h3 className="branch-name">
+        {branch.name}
+      </h3>
 
-                <p className="branch-features">
-                  {branch.features}
-                </p>
-              </div>
-            </article>
-          ))}
+      <div className="branch-details">
+        <div className="branch-detail">
+          <h4>FIND US</h4>
+          <p>{branch.address}</p>
         </div>
 
-        {totalPages > 1 && (
-          <div className="branches-pagination">
-            <button
-              type="button"
-              className="branch-page-button"
-              onClick={() =>
-                setCurrentPage((page) => page - 1)
-              }
-              disabled={currentPage === 0}
-            >
-              ← Previous
-            </button>
+        <p className="branch-features">
+          {branch.features}
+        </p>
+      </div>
 
-            <span className="branch-page-number">
-              {currentPage + 1} / {totalPages}
-            </span>
+    </article>
+  ))}
+</div>
 
-            <button
-              type="button"
-              className="branch-page-button"
-              onClick={() =>
-                setCurrentPage((page) => page + 1)
-              }
-              disabled={currentPage === totalPages - 1}
-            >
-              Next →
-            </button>
-          </div>
-        )}
-       
+{/* Navigation buttons outside the images */}
+{totalPages > 1 && (
+  <div className="branch-navigation">
+
+    <button
+      type="button"
+      className="branch-nav-button"
+      onClick={() =>
+        setCurrentPage((page) =>
+          (page - 1 + totalPages) % totalPages
+        )
+      }
+      aria-label="Previous branches"
+    >
+      ← Back
+    </button>
+
+    <button
+      type="button"
+      className="branch-nav-button"
+      onClick={() =>
+        setCurrentPage((page) =>
+          (page + 1) % totalPages
+        )
+      }
+      aria-label="Next branches"
+    >
+      Next →
+    </button>
+
+  </div>
+)}
+
+
       </section>
        <div className="cafe-page">
         <section className="hero">
